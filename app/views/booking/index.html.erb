@@ -1,0 +1,42 @@
+<% @room_types.each do |type|%>
+  <li> <%= type.name %>: <%= type.description%> </li>
+  </br>
+<% end %>
+<%= form_tag root_path, :method => :get do %>
+  <p>
+    <%= select_tag 'room_type',options_for_select(@room_types.pluck(:name),selected: params[:room_type])%>
+    Date from <input class="datepicker" id="txtFrom" name="start_date" type="text" required value=<%=params[:start_date] %>></input>
+    Between
+    Date To<input class="datepicker" id="txtTo" name="end_date" type="text" required value=<%=params[:end_date] %> ></input>
+   
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+<%if @available_room_ids.present? %>
+  No. of rooms available are <%=@available_room_ids.size%>
+  </br><%= @available_room_ids %>
+    <%= form_tag booking_path,:method => :post do%>
+      <%= hidden_field_tag :start_date, @start_date %>
+      <%= hidden_field_tag :end_date, @end_date %>
+      <%= hidden_field_tag :room_type, @room_type.name %>
+      <%= submit_tag 'Confirm Booking'%>
+    <% end %>
+  <% else %>
+    Sorry For inconvinence no rooms are available. Please check in other roomtypes 
+<%end%>
+
+</br>
+<% if current_user.present?%>
+  <%=link_to 'Log Out', destroy_user_session_path ,method: :delete%>
+    <%if @bookings.present?%>
+      Your previous bookings are
+      </br>
+      </br>
+      <% @bookings.each do |booking|%>
+      <%= booking.inspect %>
+      </br>
+      <% end %>
+    <% end %>
+<% else%>
+  <%= link_to 'Login', new_user_session_path%>
+<% end %>

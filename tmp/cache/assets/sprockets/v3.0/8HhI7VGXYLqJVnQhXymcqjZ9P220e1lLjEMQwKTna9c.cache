@@ -1,0 +1,24 @@
+I"`(function() {
+  $(function() {
+    $('#txtFrom').datepicker({
+      dateFormat: 'dd/mm/yy',
+      onSelect: function(selected) {
+        var dt;
+        dt = new Date(selected);
+        dt = $.datepicker.formatDate("mm/dd/yy", dt);
+        $('#txtTo').datepicker('option', 'minDate', dt);
+      }
+    });
+    return $('#txtTo').datepicker({
+      dateFormat: 'dd/mm/yy',
+      onSelect: function(selected) {
+        var dt;
+        dt = new Date(selected);
+        dt = $.datepicker.formatDate("mm/dd/yy", dt);
+        $('#txtFrom').datepicker('option', 'maxDate', dt);
+      }
+    });
+  });
+
+}).call(this);
+:ET

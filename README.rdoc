@@ -1,0 +1,45 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version 2.2.2
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+Hotel booking App which performs 
+1 Availability of room by passing booking date and/or room type.  
+2 if user is registered he can see his booked room and booking information
+
+
+A hotel has rooms in the following category. 
+
+20 - Deluxe Rooms - Queen Size Bed   (Rs 7000/night) 
+      Rooms: (A 01 - 05)  B( 01 - 05)  C(01 - 05)  D(01 -05)
+20 - Luxury Rooms - Queen Size Bed and Pool Facing (Rs 8500/night)
+      Rooms: A(06 - 10) B(06 -10) C(06 - 10) D (06 - 10)
+12 - Luxury Suites - King Size Bed and Pool Facing (Rs 12000/night)
+       Rooms: D (11 - 20)  E (01 - 02)
+8 - Presidential Suites - King Size Bed, Pool Facing with a Gym (Rs 20000/night)
+    E (03 - 10)
+

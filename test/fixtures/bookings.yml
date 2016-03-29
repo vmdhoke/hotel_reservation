@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking_from: 2016-03-23 17:38:20
+  booking_to: 2016-03-23 17:38:20
+  payment: 1
+  user_id: 
+  room_id: 
+
+two:
+  booking_from: 2016-03-23 17:38:20
+  booking_to: 2016-03-23 17:38:20
+  payment: 1
+  user_id: 
+  room_id: 
